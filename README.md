@@ -51,3 +51,6 @@ You will find the ID of your freshly created mod under PublishedFileID inside th
 2) Type in **`login USER PASSWORD`** , replacing the last two words with your Steam login credentials and press Enter (enter your Steam Guard code if prompted to)
 
 3) Type **`workshop_build_item THEPATH`** , replacing **THEPATH** with the full path to the mod.vdf file (that’s the same path as you would input into the mod_create.bat file). The uploading process will now start. You can grab the ID of your fresh mod either from the SteamCMD window itself or from the mod.vdf file assuming you cleared the previous ID from there (if it was not there then dont worry).
+
+
+http://animalia.bio/uploads/animals/photos/full/1.25x1/franklins-ground-squirrel-1024x732.jpg
