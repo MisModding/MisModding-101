@@ -35,6 +35,7 @@ The easiest part of modding is what I call re-scripting, such as changing spawn 
 
 **VehicleSpawnerManager.lua** (short:VSM) is the file responsible for anything related to vehicles.
 ![](Pics/VSM1.png)
+
 Its structure is fairly intuitive:
 You have the *category*, which is the type of spawner in question.
 Then the class(es) which define which class(es) of vehicles will actually spawn on that category of spawnpoints.
