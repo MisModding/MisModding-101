@@ -73,7 +73,11 @@ Percentage is pretty self-explanatory, but there is a warning I should give: ***
 
 ### Advanced modding techniques
 
-As you may have noticed, there are two additional folders inside the Spawners one: ism_mods and vsm_mods. They each have a *sample* file inside of them, stating how to add new items without modding the whole ISM (*such an action can lead to issues when a new update comes out*). Using this technique you will be able to override certain parts of ISM and VSM spawner files which would significantly lower the chance of any problems arising later on. *Take a look at these files, they have everything explained well inside of them.* If you cannot figure out a part of its usage or have any modding-related question, you should join the UnOfficial modding Discord server by the link at the top of this guide.  
+As you may have noticed, there are two additional folders inside the Spawners one: ism_mods and vsm_mods. They each have a *sample* file inside of them, stating how to add new items without modding the whole ISM (*such an action can lead to issues when a new update comes out*). Using this technique you will be able to override certain parts of ISM and VSM spawner files which would significantly lower the chance of any problems arising later on. *Take a look at these files, they have everything explained well inside of them.* If you cannot figure out a part of its usage or have any modding-related question, you should join the UnOfficial Modding Discord server by the link at the top of this guide. 
+
+### Conclusion on re-scripting
+
+The text above is merely an example so you start to understand how the inner workings of LUA-based spawner files in Miscreated work. Of course, it is best to experiment yourself - that is the most fun and also the best way of becoming good at modding. If you have any qustions it is a good idea to ask inside the UnOfficial Modding Discord, joinable by the link at the top of this guide.
 
 ## Making&Uploading a mod
 Every mod for Miscreated is in the form of a .pak archive. So how exactly does one create it?
