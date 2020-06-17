@@ -1,12 +1,16 @@
 ## MisModding-101
 A Miscreated Modding guide for beginners.
-*Created by the Miscreated Modding community and put together by 4iY* 
+*Created by the Miscreated Modding community and put together by 4iY*
+
+Consider joining the **UnOfficial MisModding Discord** server by this link: https://discord.gg/ttdzgzp . It is the best place to ask modding-related questions and request assistance on similar matters. Please take a look at this guide before asking questions, particularly if you are running into issues uploading / packing files.
+
 ## Introduction 
 So, you’ve seen all these fancy mods on the Steam Workshop and want to do the same (or at least come close to them)? You have come to the very right place then – this guide will teach you in detail how to create mods. It’s divided into sections for your convenience.
+
 ## Sections
 - Initial set-up
 - Mod flow, uploading to Steam + Examples
-- Extras (manual mod upload)
+- Extras (manual mod upload, reference links)
 
 ## Initial Set-up
 Making mods takes some initial set-up steps to be done. I recommend creating an empty folder somewhere (preferably on a drive that has a bit of free space) where the modding files will be put in. Now let’s dive straight into it.
@@ -25,9 +29,50 @@ Making mods takes some initial set-up steps to be done. I recommend creating an 
 **Never edit any file directly** – instead, copy it somewhere separate from the game, such as your Desktop, and make all changes there. Directly editing files, especially inside the game’s GameSDK folder, is a sure way to data corruption.
 
 ## Examples and Modding Flow
-The easiest part of modding is what I call re-scripting, such as changing spawn values or percentages, yet is still takes some expertise to do correctly. Let’s take the file called VehicleSpawnerManager.lua (located under Scripts.pak\Scripts\Spawners) as an example here. 
+The easiest part of modding is what I call re-scripting, such as changing spawn values or percentages, yet is still takes some expertise to do correctly. Let’s take a look at a few examples. 
 
-NEEDS DETAIL!
+### VehicleSpawnerManager.lua
+
+**VehicleSpawnerManager.lua** (short:VSM) is the file responsible for anything related to vehicles.
+![](Pics/VSM1.png)
+Its structure is fairly intuitive:
+You have the *category*, which is the type of spawner in question.
+Then the class(es) which define which class(es) of vehicles will actually spawn on that category of spawnpoints.
+There are parameters of the category. Lets take a close look at them:
+
+**initialMinVehicles = 1,** is the line that adjusts the amount of vehicles that can be maximally on the map at any given time (*if some are destroyed the game will spawn them so its at the limit*) 
+
+**abandonedTimer = 172800,** is the line that adjusts how much time a car can stay without interaction  upon this value exceeding the vehicle will be removed from the map. 
+
+**AbandonedRespawnTimer = 3600,** is the timer for the vehicles respawn after it has disappeared for being abandoned 
+
+**destroyedTimer = 120,** is how long the vehicles remains stay after explosion 
+
+**destroyedRespawnTimer = 7200,** is the timer of how much time it will take to respawn after being destoyed . It should be noted that this timer is not precise  instead, it is randomized with unadvertised limits. Changing this value will shift the limits too, but do not expect it to spawn exactly after X amount of time has passed. 
+
+### ActionableWorldManager.lua
+
+**ActionableWorldManager.lua** (short: AWM) is the file responsible for anything that has to do with items that players directly interact with, be it gathering wood by hitting a tree or drinking water from a watersource. Lets take a closer look at Harvesting WoodPile: 
+
+![](Pics/AWM1.png)
+
+Not all of these strings are useful to modders. The main ones you may want to adjust are  
+
+**uses = 66,** which defines how many pieces of resource can be gathered from one gathering point and **percentage = 100,** which defines the amount of resource gathered per one interaction. As such, if you put it to 50 the player will only receive one piece per hit; if it is put to 200 the player will receive 2 pieces of resource per one hit. 
+
+### ItemSpawnManager.lua
+
+**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason  this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). 
+Lets take a look at the very first category that is used inside the game: Map 
+
+![](Pics/ISM1.png)
+
+As you can see, the structure here is similar to VSM  it has a *category*, which defines the spawnpoint type (name), and *class*(es), which define which items will actually spawn there. The difference here is that these items have percentages and some other parameters, such as min/max numbers or aa level_specific=X switch.
+Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, min/max values define the minimum and the maximum number of items within a spawned stack and level_speicic=X switch is explained at the top of the file in a comment. 
+
+### Advanced modding techniques
+
+As you may have noticed, there are two additional folders inside the Spawners one: ism_mods and vsm_mods. They each have a *sample* file inside of them, stating how to add new items without modding the whole ISM (*such an action can lead to issues when a new update comes out*). Using this technique you will be able to override certain parts of ISM and VSM spawner files which would significantly lower the chance of any problems arising later on. *Take a look at these files, they have everything explained well inside of them.* If you cannot figure out a part of its usage or have any modding-related question, you should join the UnOfficial modding Discord server by the link at the top of this guide.  
 
 ## Making&Uploading a mod
 Every mod for Miscreated is in the form of a .pak archive. So how exactly does one create it?
@@ -52,5 +97,7 @@ You will find the ID of your freshly created mod under PublishedFileID inside th
 
 3) Type **`workshop_build_item THEPATH`** , replacing **THEPATH** with the full path to the mod.vdf file (that’s the same path as you would input into the mod_create.bat file). The uploading process will now start. You can grab the ID of your fresh mod either from the SteamCMD window itself or from the mod.vdf file assuming you cleared the previous ID from there (if it was not there then dont worry).
 
+### Videos for reference by Entrada Interactive 
+https://www.youtube.com/watch?v=Ucqr21oA0WY&list=PLMCbP34P4_GO8fLHePTyWkcuODH4eglEC  - Lunchbox mod, includes visual editing of files and uploading via SteamCMD
 
 
