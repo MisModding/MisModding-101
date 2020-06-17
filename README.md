@@ -28,8 +28,8 @@ The easiest part of modding is what I call re-scripting, such as changing spawn 
 NEEDS DETAIL!
 
 ## Making&Uploading a mod
-So how exactly does one make a mod? If you’re uploading the mod that we created (being just a few adjusted spawner files) it’s not that hard.
-Creating a .pak file is trivial – all you have to do is put all files inside the correct folders (you may need to create them – see below) in the Workspace folder of MisModPacker (which we downloaded previously) and then run CreatePak.bat. You new .pak file will be located in Build called workshop_build.pak - you may rename it.
+Every mod for Miscreated is in the form of a .pak archive. So how exactly does one create it?
+It is trivial – all you have to do is put all files inside the correct folders (you may need to create them – see **warning** below) in the Workspace folder of MisModPacker (which we downloaded previously) and then run CreatePak.bat. You new .pak file will be located in Build called workshop_build.pak - you may rename it.
 
 ### WARNING!
 There is one very important part here, ***you must retain the folder structure leading to whatever files you want to upload in full.*** Meaning you cannot just upload the few .lua files we adjusted inside a .pak as is. The inner structure of the .pak file has to copy that of the GameSDK and original .pak files: as an example, for the VehicleSpawnerManager.lua file you would need to mimic the folders leading to it, starting with the GameSDK folder. It would look like this: `MyMod.pak\GameSDK\Scripts\Spawners\VehicleSpawnerManager.lua`
