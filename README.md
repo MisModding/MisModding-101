@@ -15,7 +15,9 @@ Making mods takes some initial set-up steps to be done. I recommend creating an 
 
 1.2) Download Theros’s MisModPacker under this link: https://github.com/4iY/MisModPacker  and save it in a separate folder (it will be used a lot)
 
-1.3) Install SteamCMD from this official link (put it in a separate folder but remember where it is): https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+1.3.1) Install SteamCMD from this official link (put it in a separate folder but remember where it is): https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+
+1.3.2) Alternatively, you can use a 3rd-party tool created by Theros to upload mods - all instructions for its usage and the link to download it is in here: https://svaltek.gitlab.io/projects/mismodpublisher/ . Using this particular application is beyond the scope of this guide.
 
 1.4) It is also recommended to install Notepad++ for editing LUA and XML files for modding (https://notepad-plus-plus.org/downloads/ ) and an archiving software. There is one personally recommended by experienced modders – PeaZip (https://www.peazip.org/), but you can use the likes of WinRar or 7zip if you want to assuming they do not cause issues with your system.
 
