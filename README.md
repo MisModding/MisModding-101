@@ -63,13 +63,13 @@ Not all of these strings are useful to modders. The main ones you may want to ad
 
 ### ItemSpawnManager.lua
 
-**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason  this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). 
-Lets take a look at the very first category that is used inside the game: Map 
+**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason: this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). 
+Let's take a look at the very first category that is used inside the game: Map 
 
 ![](Pics/ISM1.png)
 
-As you can see, the structure here is similar to VSM  it has a *category*, which defines the spawnpoint type (name), and *class*(es), which define which items will actually spawn there. The difference here is that these items have percentages and some other parameters, such as min/max numbers or aa level_specific=X switch.
-Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, min/max values define the minimum and the maximum number of items within a spawned stack and level_speicic=X switch is explained at the top of the file in a comment. 
+As you can see, the structure here is similar to VSM: it has a *category*, which defines the spawnpoint type (name), and *class*(es), which define which items will actually spawn there. The difference here is that these items have percentages and some other parameters, such as min/max numbers or a `level_specific=X` switch.
+Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, `min/max` values define the minimum and the maximum number of items within a spawned stack and `level_speicic=X` switch is explained at the top of the file in a comment. 
 
 ### Advanced modding techniques
 
