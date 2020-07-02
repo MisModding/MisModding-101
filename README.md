@@ -91,9 +91,9 @@ As you may have noticed, there are two additional folders inside the Spawners on
 
 ### Conclusion on re-scripting
 
-The text above is merely an example so you start to understand how the inner workings of LUA-based spawner files in Miscreated work. Of course, it is best to experiment yourself - that is the most fun and also the best way of becoming good at modding. If you have any qustions it is a good idea to ask inside the UnOfficial Modding Discord, joinable by the link at the top of this guide.
+The text above is merely an example so you start to understand the inner workings of different files in Miscreated. Of course, it is best to experiment yourself - that is the most fun and also the best way of becoming good at modding. If you have any qustions it is a good idea to ask inside the *UnOfficial Modding Discord*, joinable by the link at the top of this guide.
 
-## Making&Uploading a mod
+## Making & Uploading a mod
 Every mod for Miscreated is in the form of a .pak archive. So how exactly does one create it?
 It is trivial – all you have to do is put all files inside the correct folders (you may need to create them – see **warning** below) in the Workspace folder of MisModPacker (which we downloaded previously) and then run CreatePak.bat. You new .pak file will be located in Build called workshop_build.pak - you may rename it.
 
