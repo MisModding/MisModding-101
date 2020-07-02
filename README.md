@@ -71,6 +71,20 @@ Let's take a look at the very first category that is used inside the game: Map
 As you can see, the structure here is similar to VSM: it has a *category*, which defines the spawnpoint type (name), and *class*(es), which define which items will actually spawn there. The difference here is that these items have percentages and some other parameters, such as min/max numbers or a `level_specific=X` switch.
 Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, `min/max` values define the minimum and the maximum number of items within a spawned stack and `level_speicic=X` switch is explained at the top of the file in a comment. 
 
+### Editing XML files
+
+**.XML files** are the files which dictate *all* properties of items, vehicles, baseparts and so on. Any new item would need one, and that said you are free to modify any existing one too to suit your needs - such as extending stack size on a stackable item or say increasing its weight. Let's take a look at the structure of an XML file for Rags (located in Scripts/Entities/Items/XML/Equipment)
+
+![](Pics/XMLs1.png)
+
+The main category we want to look at here is `<params>` - this is the block of code which sets, well, parameters.
+
+`<param name="mass" value="0.1">` is the item's mass (in KGs); `"stack_size"` is stacksize, or how many items can be stacked with each other (Tip: it is wise to not make items that have health stackable *(these are the items that have a `"health"` parameter)* as that will cause UI glitches). 
+
+Next category we should check is `<usable>`, and this one defines which action(s) is attached to the item in question as well as what sound plays when said action is used. Pretty straight-forward.
+
+Lastly, let's take a look at `<storage>` - this defines where the item can be stored. `"any"` means anywhere (apart from usable slots, such as 1-4 or 5-6), and in this example `"waist"` means that Rags can be stored on your waist instead of a Fanny Pack. **Warning: you cannot specify more than 2 storage locations!**
+
 ### Advanced modding techniques
 
 As you may have noticed, there are two additional folders inside the Spawners one: ism_mods and vsm_mods. They each have a *sample* file inside of them, stating how to add new items without modding the whole ISM (*such an action can lead to issues when a new update comes out*). Using this technique you will be able to override certain parts of ISM and VSM spawner files which would significantly lower the chance of any problems arising later on. *Take a look at these files, they have everything explained well inside of them.* If you cannot figure out a part of its usage or have any modding-related question, you should join the UnOfficial Modding Discord server by the link at the top of this guide. 
