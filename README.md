@@ -9,7 +9,7 @@ So, you’ve seen all these fancy mods on the Steam Workshop and want to do the 
 
 ## Sections
 - Initial set-up
-- Mod flow, uploading to Steam + Examples
+- Modding flow, uploading to Steam + Examples
 - Extras (manual mod upload, reference links)
 
 ## Initial Set-up
@@ -39,31 +39,31 @@ The easiest part of modding is what I call re-scripting, such as changing spawn 
 Its structure is fairly intuitive:
 You have the *category*, which is the type of spawner in question.
 Then the class(es) which define which class(es) of vehicles will actually spawn on that category of spawnpoints.
-There are parameters of the category. Lets take a close look at them:
+There are parameters of the category. Lets take a closer look at them:
 
 **initialMinVehicles = 1,** is the line that adjusts the amount of vehicles that can be maximally on the map at any given time (*if some are destroyed the game will spawn them so its at the limit*) 
 
-**abandonedTimer = 172800,** is the line that adjusts how much time a car can stay without interaction  upon this value exceeding the vehicle will be removed from the map. 
+**abandonedTimer = 172800,** is the line that adjusts how much time a car can stay without interaction, upon this value exceeding the vehicle will be removed from the map. 
 
 **AbandonedRespawnTimer = 3600,** is the timer for the vehicles respawn after it has disappeared for being abandoned 
 
-**destroyedTimer = 120,** is how long the vehicles remains stay after explosion 
+**destroyedTimer = 120,** is how long the remains stay after explosion 
 
-**destroyedRespawnTimer = 7200,** is the timer of how much time it will take to respawn after being destoyed . It should be noted that this timer is not precise  instead, it is randomized with unadvertised limits. Changing this value will shift the limits too, but do not expect it to spawn exactly after X amount of time has passed. 
+**destroyedRespawnTimer = 7200,** is the timer of how much time it will take to respawn after being destoyed . It should be noted that this timer is not precise - instead, it is randomized with unadvertised limits. Changing this value will shift the limits too, but do not expect it to spawn exactly after X amount of time has passed. 
 
 ### ActionableWorldManager.lua
 
-**ActionableWorldManager.lua** (short: AWM) is the file responsible for anything that has to do with items that players directly interact with, be it gathering wood by hitting a tree or drinking water from a watersource. Lets take a closer look at Harvesting WoodPile: 
+**ActionableWorldManager.lua** (short: AWM) is the file responsible for anything that has to do with items that players directly interact with, be it gathering wood by hitting a tree or drinking water from a watersource. Let's take a closer look at Harvesting WoodPile: 
 
 ![](Pics/AWM1.png)
 
 Not all of these strings are useful to modders. The main ones you may want to adjust are  
 
-**uses = 66,** which defines how many pieces of resource can be gathered from one gathering point and **percentage = 100,** which defines the amount of resource gathered per one interaction. As such, if you put it to 50 the player will only receive one piece per hit; if it is put to 200 the player will receive 2 pieces of resource per one hit. 
+**uses = 66,** which defines how many pieces of resource can be gathered from one gathering point and **percentage = 100,** which defines the amount of resource gathered per one interaction. As such, if you put it to 50 the player will only receive one piece per two hits; if it is put to 200 the player will receive 2 pieces of resource per one hit. 
 
 ### ItemSpawnManager.lua
 
-**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason: this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). 
+**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason: this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). It is also the file that maintain's traders' inventories. 
 Let's take a look at the very first category that is used inside the game: Map 
 
 ![](Pics/ISM1.png)
@@ -95,10 +95,10 @@ The text above is merely an example so you start to understand the inner working
 
 ## Making & Uploading a mod
 Every mod for Miscreated is in the form of a .pak archive. So how exactly does one create it?
-It is trivial – all you have to do is put all files inside the correct folders (you may need to create them – see **warning** below) in the Workspace folder of MisModPacker (which we downloaded previously) and then run CreatePak.bat. You new .pak file will be located in Build called workshop_build.pak - you may rename it.
+It is trivial – all you have to do is put all files inside the correct folders (you may need to create them – see **warning** below) in the Workspace folder of MisModPacker (which we downloaded previously) and then run CreatePak.bat. You new .pak file will be located in Build called workshop_build.pak - you should rename it before uploading.
 
 ### WARNING!
-There is one very important part here, ***you must retain the folder structure leading to whatever files you want to upload in full.*** Meaning you cannot just upload the few .lua files we adjusted inside a .pak as is. The inner structure of the .pak file has to copy that of the GameSDK and original .pak files: as an example, for the VehicleSpawnerManager.lua file you would need to mimic the folders leading to it, starting with the GameSDK folder. It would look like this: `MyMod.pak\GameSDK\Scripts\Spawners\VehicleSpawnerManager.lua`
+There is one very important part here, ***you must retain the folder structure leading to whatever files you want to upload in full.*** Meaning you cannot just upload the few .lua files we adjusted inside a .pak as is. The inner structure of the .pak file has to copy that of the GameSDK and original .pak files: as an example, for the VehicleSpawnerManager.lua file you would need to mimic the folders leading to it, starting with the GameSDK folder. The structure of a .pak would look like this: `MyMod.pak\GameSDK\Scripts\Spawners\VehicleSpawnerManager.lua`
 
 ### Uploading a mod
 After we created the .pak file all that’s left is to upload it, and that is done via the mod_create.bat file. Before we proceed, open the mod.vdf file and edit the Path (*it has to be leading to the .pak file of the created mod*), Title and Description, last two being recommended but entirely optional. 
