@@ -107,6 +107,8 @@ Now Right-click on the mod_create.bat file and press Edit (you can use any text 
 You cannot upload mods from an account that is currently in use, like someone logged in on it. *If you do not have another Steam account kill the process called Steam Client Bootstrapper in Task Manager.* **If your login has a dot or a special symbol then this will not work, there will be an explanation further down how to manually upload mods**) – ***make sure to remove the less than / more than (< and >) symbols but retain all spaces.*** Next, adjust the path to mod.vdf so it leads to where it actually is located. Then save the file and double-click on it to run the .bat. 
 Upon doing so a SteamCMD window will pop up – it may ask you to fill in the Steam Guard code, please do so if it does – and the process of uploading the mod should start. If it doesn’t, double-check all paths inside both mod.vdf and your mod_create.bat file. If you cannot figure out what’s going wrong, please jump to Extras for a guide on how to manually use SteamCMD to upload mods.
 You will find the ID of your freshly created mod under PublishedFileID inside the mod.vdf file – that is the exact ID which is put in a server’s mod list.
+### NOTICE 2!
+__Your mod MUST be set to either Public or Unlisted in its privacy settings, it WILL NOT work otherwise!__
 
 ## Extras
 ### Manual use of SteamCMD to upload mods (if having issues using .bat file)
