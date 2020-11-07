@@ -23,7 +23,7 @@ Making mods takes some initial set-up steps to be done. I recommend creating an 
 
 3.2) Alternatively, you can use a 3rd-party tool created by Theros to upload mods - all instructions for its usage and the link to download it is in here: https://github.com/MisModding/MisModPublisher . It should be noted that this tool is the *recommended* way of uploading mods as it has more features - you should give it a try *before* the SteamCMD method. That said, this guide is not the place to look for instructions on its usage - take that to the GitHub project linked just above.
 
-4) It is also recommended to install Notepad++ for editing LUA and XML files for modding (https://notepad-plus-plus.org/downloads/ ) and an archiving software. There is one personally recommended by experienced modders – PeaZip (https://www.peazip.org/), but you can use the likes of WinRar or 7zip if you want to assuming they do not cause issues with your system.
+4.) It is also recommended to install Notepad++ for editing LUA and XML files for modding (https://notepad-plus-plus.org/downloads/ ) and an archiving software. There is one personally recommended by experienced modders – PeaZip (https://www.peazip.org/), but you can use the likes of WinRar or 7zip if you want to assuming they do not cause issues with your system.
 
 ### WARNING!
 **Never edit any file directly** – instead, copy it somewhere separate from the game, such as your Desktop, and make all changes there. Directly editing files, especially inside the game’s GameSDK folder, is a sure way to data corruption.
