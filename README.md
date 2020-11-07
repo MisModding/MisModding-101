@@ -33,7 +33,7 @@ The easiest part of modding is what I call re-scripting, such as changing spawn 
 
 ### VehicleSpawnerManager.lua
 
-**VehicleSpawnerManager.lua** (short:VSM) is the file responsible for anything related to vehicles.
+**VehicleSpawnerManager.lua** (short: VSM) is the file responsible for anything related to vehicles.
 ![](Pics/VSM1.png)
 
 Its structure is fairly intuitive:
