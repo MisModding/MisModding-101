@@ -15,15 +15,15 @@ So, you’ve seen all these fancy mods on the Steam Workshop and want to do the 
 ## Initial Set-up
 Making mods takes some initial set-up steps to be done. I recommend creating an empty folder somewhere (preferably on a drive that has a bit of free space) where the modding files will be put in. Now let’s dive straight into it.
 
-1.1) Download the files to upload the mod (we’ll do that part a bit later, after we actually create the modification) from this video’s description (official link provided by the developers): https://www.youtube.com/watch?v=Ucqr21oA0WY
+1.) Download the files to upload the mod (we’ll do that part a bit later, after we actually create the modification) from this video’s description (official link provided by the developers): https://www.youtube.com/watch?v=Ucqr21oA0WY
 
-1.2) Download Theros’s MisModPacker under this link: https://github.com/4iY/MisModPacker  and save it in a separate folder (it will be used a lot)
+2.) Download Theros’s MisModPacker under this link: https://github.com/4iY/MisModPacker  and save it in a separate folder (it will be used a lot)
 
-1.3.1) Install SteamCMD from this official link (put it in a separate folder but remember where it is): https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+3.1) Install SteamCMD from this official link (put it in a separate folder but remember where it is): https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
 
-1.3.2) Alternatively, you can use a 3rd-party tool created by Theros to upload mods - all instructions for its usage and the link to download it is in here: https://github.com/MisModding/MisModPublisher . It should be noted that this tool is the *recommended* way of uploading mods as it has more features - you should give it a try *before* the SteamCMD method. That said, this guide is not the place to look for instructions on its usage - take that to the GitLab project linked just above.
+3.2) Alternatively, you can use a 3rd-party tool created by Theros to upload mods - all instructions for its usage and the link to download it is in here: https://github.com/MisModding/MisModPublisher . It should be noted that this tool is the *recommended* way of uploading mods as it has more features - you should give it a try *before* the SteamCMD method. That said, this guide is not the place to look for instructions on its usage - take that to the GitHub project linked just above.
 
-1.4) It is also recommended to install Notepad++ for editing LUA and XML files for modding (https://notepad-plus-plus.org/downloads/ ) and an archiving software. There is one personally recommended by experienced modders – PeaZip (https://www.peazip.org/), but you can use the likes of WinRar or 7zip if you want to assuming they do not cause issues with your system.
+4) It is also recommended to install Notepad++ for editing LUA and XML files for modding (https://notepad-plus-plus.org/downloads/ ) and an archiving software. There is one personally recommended by experienced modders – PeaZip (https://www.peazip.org/), but you can use the likes of WinRar or 7zip if you want to assuming they do not cause issues with your system.
 
 ### WARNING!
 **Never edit any file directly** – instead, copy it somewhere separate from the game, such as your Desktop, and make all changes there. Directly editing files, especially inside the game’s GameSDK folder, is a sure way to data corruption.
