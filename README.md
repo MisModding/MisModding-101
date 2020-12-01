@@ -79,7 +79,7 @@ Percentage is pretty self-explanatory, but there is a warning I should give: ***
 
 The main category we want to look at here is `<params>` - this is the block of code which sets, well, parameters.
 
-`<param name="mass" value="0.1">` is the item's mass (in KGs); `"stack_size"` is stacksize, or how many items can be stacked with each other (Tip: it is wise to not make items that have health stackable *(these are the items that have a `"health"` parameter)* as that will cause UI glitches). 
+`<param name="mass" value="0.1">` is the item's mass (in KGs); `"stack_size"` is stacksize, or how many items can be stacked with each other (Tip: it is wise to not make items that have health stackable *(these are the items that have a `"health"` parameter)* as that will cause UI glitches). One more note here - the UI cannot display stack size numbers above 255 - they will be there in the database, but the number itself will not go above 255, so it's highly recommended to stay below 255 for stacksize numbers.
 
 Next category we should check is `<usable>`, and this one defines which action(s) is attached to the item in question as well as what sound plays when said action is used. Pretty straight-forward.
 
