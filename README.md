@@ -63,13 +63,13 @@ Not all of these strings are useful to modders. The main ones you may want to ad
 
 ### ItemSpawnManager.lua
 
-**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason: this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). It is also the file that maintain's traders' inventories. 
+**ItemSpawnManager.lua** (short: ISM) is the most complex and largest file out of all the spawners, and for a reason: this file is solely responsible for ALL item spawns, either out in the open or within context items (lootable by utilizing the mouse wheel). It is also the file that maintains traders' inventories. 
 Let's take a look at the very first category that is used inside the game: Map 
 
 ![](Pics/ISM1.png)
 
 As you can see, the structure here is similar to VSM: it has a *category*, which defines the spawnpoint type (name), and *class*(es), which define which items will actually spawn there. The difference here is that these items have percentages and some other parameters, such as min/max numbers or a `level_specific=X` switch.
-Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, `min/max` values define the minimum and the maximum number of items within a spawned stack and `level_speicic=X` switch is explained at the top of the file in a comment. 
+Percentage is pretty self-explanatory, but there is a warning I should give: ***Inside a category all classes' percentages MUST equal 100 - otherwise the whole category will NOT work.***. Furthermore, `min/max` values define the minimum and the maximum number of items within a spawned stack and `level_specific=X` switch is explained at the top of the file in a comment. 
 
 ### Editing XML files
 
@@ -77,9 +77,9 @@ Percentage is pretty self-explanatory, but there is a warning I should give: ***
 
 ![](Pics/XMLs1.png)
 
-The main category we want to look at here is `<params>` - this is the block of code which sets, well, parameters.
+The main category we want to look at here is `<params>` - this is the block which sets, well, parameters.
 
-`<param name="mass" value="0.1">` is the item's mass (in KGs); `"stack_size"` is stacksize, or how many items can be stacked with each other (Tip: it is wise to not make items that have health stackable *(these are the items that have a `"health"` parameter)* as that will cause UI glitches). One more note here - the UI cannot display stack size numbers above 255 - they will be there in the database, but the number itself will not go above 255, so it's highly recommended to stay below 255 for stacksize numbers.
+`<param name="mass" value="0.1">` is the item's mass (in KGs); `"stack_size"` is stacksize, or how many items can be stacked with each other (Tip: it is wise to not make items that have health stackable *(these are the items that have a `"health"` parameter)* as that will cause UI glitches). One more note here - the UI cannot display stack size numbers above 255 - they will be there in the database and still be usable, however the number itself will not go above 255 so it's highly recommended to stay below 255 for stacksize numbers.
 
 Next category we should check is `<usable>`, and this one defines which action(s) is attached to the item in question as well as what sound plays when said action is used. Pretty straight-forward.
 
